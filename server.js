@@ -12,6 +12,10 @@ server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
 
+server.get('/', function (req, res, next) {
+  res.send('Index Page, go to /lat1/long1/lat2/long2 for the api.');
+});
+
 server.get('/:lat1/:long1/:lat2/:long2', function (req, res, next) {
   var result = distance(req.params["lat1"], req.params["long1"], req.params["lat2"], req.params["long2"]);
   res.send({
