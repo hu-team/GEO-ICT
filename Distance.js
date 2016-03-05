@@ -9,7 +9,7 @@ module.exports = function getDistance(lat1,lon1,lat2,lon2) {
       ;
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
     var d = R * c; // Distance in km
-    return Math.round(d).toFixed(1);
+    return Math.round(d*1000)/1000;
   }
 
 
