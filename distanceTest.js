@@ -25,13 +25,6 @@ var data1 = [
     a: 438.0
   },
   {
-    lat1: 10.0,
-    long1: 178.0,
-    lat2: 10.0,
-    long2: -178.0,
-    a: 438.0
-  },
-  {
     lat1: 90.0,
     long1: 0.0,
     lat2: -90.0,
@@ -63,6 +56,7 @@ function _ServiceTest(lat1, long1, lat2, long2, a){
   describe("Distance Calculator", function(){
     it("Calculate distance between lat1 long1 lat2 long2", function(){
       var testdata = distance(lat1, long1, lat2, long2);
+      console.log("lat/lon: "+lat1+" "+long1+" "+lat2+" "+long2+" expected: "+a);
       assert.closeTo(testdata, a, delta, 'Ok!');
     });
   });
