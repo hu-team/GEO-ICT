@@ -19,10 +19,10 @@ server.get('/', function (req, res, next) {
 server.get('/:lat1/:long1/:lat2/:long2', function (req, res, next) {
   var result = distance(req.params["lat1"], req.params["long1"], req.params["lat2"], req.params["long2"]);
   res.send({
-    lat1: req.params["lat1"],
-    long1: req.params["long1"],
-    lat2: req.params["lat2"],
-    long2: req.params["long2"],
+    lat1: Number(req.params["lat1"]*1000)/1000,
+    long1: Number(req.params["long1"]),
+    lat2: Number(req.params["lat2"]),
+    long2: Number(req.params["long2"]),
     distance: result
   });
   return next();
