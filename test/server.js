@@ -66,7 +66,7 @@ describe("Testing distances",function(){
       .expect(200)
       .end(function(err,res){
         res.status.should.equal(200);
-        parseFloat(res.body.distance).toFixed(9).should.equal(expect);
+        parseFloat(res.body.distance).toFixed(9).should.be.approximately(expect, 0.1);
         done();
       });
     });
